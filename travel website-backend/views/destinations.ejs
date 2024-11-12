@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+</head>
+<body>
+    <header>
+        <h1>Destinations</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/bookings">Bookings</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Available Destinations</h2>
+        <% if (destinations && destinations.length > 0) { %>
+            <ul>
+                <% destinations.forEach(function(destination) { %>
+                    <li>
+                        <h3><%= destination.name %></h3>
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.YGAo4ULc84h7VNrV60dRVgHaEK&pid=Api&P=0&h=220" alt="<%= destination.name %>" width="200">
+                        <p><%= destination.description %></p>
+                        <p><%= destination.details %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No destinations available.</p>
+        <% } %>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Travel Website</p>
+    </footer>
+</body>
+</html>

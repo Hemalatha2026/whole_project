@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - <%= destination.name %></title>
+</head>
+<body>
+    <h1>Book Your Trip to <%= destination.name %></h1>
+    <form action="/submit-booking" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Include destination details in the form if needed -->
+        <input type="hidden" name="destination" value="<%= destination.name %>">
+        <input type="hidden" name="destinationId" value="<%= destination._id %>">
+
+        <button type="submit">Submit Booking</button>
+    </form>
+</body>
+</html>
